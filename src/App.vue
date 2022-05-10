@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <HeaderContent/>
+    <CardContent/>
   </div>
 </template>
 
 <script>
 import HeaderContent from './components/HeaderContent.vue'
-
+import CardContent from './components/CardContent.vue'
 export default {
   name: 'App',
   components: {
-   HeaderContent
+   HeaderContent,
+   CardContent
   }
+  
 }
 </script>
 
