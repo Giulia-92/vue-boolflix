@@ -1,12 +1,12 @@
 <template>
   <div>
-    <input type="text" v-model="search" @keyup.enter="$emit('goSearch',search)">
+    <input type="text" v-model="search" @keyup.enter="ricerca">
     <button @click="ricerca">Inizia Ricerca</button>
   </div>
 </template>
 
 <script>
-import state from'../store.js'
+
 export default {
   name: 'HeaderContent',
   data(){

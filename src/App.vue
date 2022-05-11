@@ -33,21 +33,21 @@ export default {
         this.movies=res.data.results;
       })
     },
-    toSeries(queryParams){
-      axios.get(this.apiPath +'tv',queryParams).then((res)=>{
-        this.movies=res.data.results;
-      })
-  },
-  search(text){
-    const queryParams={
-      params:{
-        api_key:this.apikey,
-        query:text
+    
+   
+    search(text){
+      const queryParams={
+        params:{
+          api_key:this.apiKey,
+          query:text
+        }
       }
+      console.log(queryParams)
+      this.toMovies(queryParams)
+      
     }
+    
   }
-  
-}
 }
 </script>
 

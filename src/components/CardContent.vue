@@ -19,9 +19,7 @@ export default {
             items:Array,
             title:String,
         },
-        data(){
-            return
-        },
+        
     
 }
 </script>
