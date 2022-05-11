@@ -1,60 +1,44 @@
 <template>
   <div>
-    <ul>
-      <li v-for="(item) in filmList" :key="item"> :img="item.poster_path :id="item.id" :linguage="item.original_linguage" :title="item.original_title"/>
-      </li>
-    </ul>
-    
+    <input type="text" v-model="search" @keyup.enter="$emit('goSearch',search)">
+    <button @click="ricerca">Inizia Ricerca</button>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import state from'../store.js'
 export default {
   name: 'HeaderContent',
-  props: {
-    id: Number,
-    linguage:String,
-    title:String,
-     img:String,
-  },
   data(){
     return{
-      filmList:[],
-      apiPath:'https://api.themoviedb.org/3/search/movie?api_key=b1114bdb80acbfdef0b6a3f26eab00e2&query=ritorno+al+futuro'
+      search:''
+
     }
   },
-  created(){
-       console.log(this.apiPath)
-      axios.get(this.apiPath).then((res)=>{
-          this.cardList =res.data.response
-          console.log (res.data.response) 
-      })   
-  },
+  methods:{
+    ricerca(){
+      this.$emit('goSearch', this.search),
+      this.search=''
+    }
+  }
+  
 }
 </script>
 
 
-
+*created(){
+       console.log(this.apiPath)
+      axios.get(this.apiPath).then((res)=>{
+          this.filmList =res.data.results
+          console.log (res.data.results) 
+      })   
+  },*
 
 "id": 105,
             "original_language": "en",
             "original_title": "Back to the Future",
             "overview":
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
