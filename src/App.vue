@@ -2,10 +2,10 @@
 <main>
   <div id="app">
     <HeaderContent @goSearch="search" />
-    <div class="sfondo">
+    <div>
       <card-content :items="movies" title='Movies' />
-    </div>
      <card-content :items="series" title='Series' />
+    </div>
   </div>
   </main>
 </template>
@@ -26,12 +26,18 @@ export default {
       apiPath:'https://api.themoviedb.org/3/search/',
       series:[],
       movies:[],
+      
     }
   },
   methods:{
     toMovies(queryParams){
       axios.get(this.apiPath +'movie',queryParams).then((res)=>{
         this.movies=res.data.results;
+      })
+    },
+    toSeries(queryParams){
+      axios.get(this.apiPath +'tv',queryParams).then((res)=>{
+        this.series=res.data.results;
       })
     },
     
@@ -44,7 +50,8 @@ export default {
         }
       }
       console.log(queryParams)
-      this.toMovies(queryParams)
+      this.toMovies(queryParams),
+      this.toSeries(queryParams)
       
     }
     
