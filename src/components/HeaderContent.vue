@@ -38,7 +38,7 @@ header{
 }
 h1{
   color:red;
-  font-size:30px;
+  font-size:20px;
   font-family:'Roboto Condensed';
   padding-top:5px;
   padding-left:8px;

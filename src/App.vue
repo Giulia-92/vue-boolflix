@@ -1,12 +1,14 @@
 <template>
-<main>
-  <div id="app">
-    <HeaderContent @goSearch="search" />
-    <div>
-      <card-content :items="movies" title='Movies' />
-     <card-content :items="series" title='Series' />
+  <main>
+    <div id="app">
+      <HeaderContent @goSearch="search" />
+      <div>
+        <div>
+          <card-content :items="movies" title='Movies' />
+          <card-content :items="series" title='Series' />
+        </div>
+      </div>
     </div>
-  </div>
   </main>
 </template>
 
@@ -60,9 +62,6 @@ export default {
 </script>
 
 <style lang="scss">
-main{
-  background-color: rgb(44, 42, 42);
-  height:100%;
-}
+@import'./assets/style/general.scss';
 
 </style>
