@@ -2,10 +2,28 @@
 <div class="container">
         <h3 class="titoli">{{title}}</h3>
         <div class="row">
-    <div v-for="(item) in items" :key="item.id" class="col-6 col-md-4 col-lg-3 mb-2">
-        <div class="card mt-5" style="width: 16rem;">
-            <img :src="imagePath+item.poster_path" class="card-img-top" alt="poster">
-                <div class="card-body center">
+            <div v-for="(item) in items" :key="item.id" class="col-6 col-md-4 col-lg-3 mb-2">
+                <div class="card mt-5" style="width: 16rem;">
+                   <a href="#"> <img :src="imagePath+item.poster_path" class="card-img" alt="poster">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">titolo:{{item.title ? item.title : item.name}}</h5>
+
+                            <p class="text-white">id:{{item.id}}, voto:{{item.vote_average}}, testo:{{item.overview}}</p>
+                            <!--<p class="card-text">id:{{item.id}}, voto:{{item.vote_average}}, testo:{{item.overview}}</p>-->
+    
+                        </div>
+                    </a>   
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+          <!--<a href="#"> <img :src="imagePath+item.poster_path" class="card-img-top" alt="poster"></a>--> 
+                <!--<div class="card-body center">
                     <h1 class="card-title text white center fw bold my-3">titolo:{{item.title ? item.title : item.name}}</h1> 
                     <p class="card-text"> voto:{{item.vote_average}}
                         <br /> id:{{item.id}},
@@ -13,25 +31,9 @@
                         lingua: <img class="bandiera" v-if="item.original_language ==='it'" :src="require('../assets/style/'+item.original_language+'.png')" alt="italiano">,
                         <br />
                         lingua: <img class="bandiera" v-if="item.original_language ==='en'" :src="require('../assets/style/'+item.original_language+'.png')" alt="inglese"></p>
-                </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!--<div v-for="(item) in items" :key="item.id" class="col-6 col-md-4 col-lg-3 mb-3">
+                </div>-->
+        
+<!--<div v-for="(item) in items" :key="item.id" class="col-6 col-md-4 col-lg-3 mb-3">
                  <img :src="imagePath+item.poster_path" alt="">
                 id:{{item.id}},
                 <br />
@@ -45,7 +47,7 @@
                 lingua: <img v-if="item.original_language ==='en'" :src="require('../assets/style/'+item.original_language+'.jpg')" alt="inglese">
                 
             </div>-->
-        </div>
+        <!--</div>-->
   
 </template>
 <script>
@@ -82,6 +84,22 @@ main{
     font-size:50px;
     color: white;
     margin-top:8px;
+}
+.text-white{
+font-size:15px;
+line-height:17px;
+font-family:'Roboto Condensed';
+
+}
+a{
+    color: white;
+    text-decoration:none;
+    
+}
+a:hover{
+opacity:rgb(40, 38, 38);
+display: block;
+
 }
 
 </style>
