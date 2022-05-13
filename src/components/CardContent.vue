@@ -6,9 +6,12 @@
                 <div class="card mt-5" style="width: 16rem;">
                    <a href="#"> <img :src="imagePath+item.poster_path" class="card-img" alt="poster">
                         <div class="card-img-overlay">
-                            <h5 class="card-title">titolo:{{item.title ? item.title : item.name}}</h5>
-
-                            <p class="text-white">id:{{item.id}}, voto:{{item.vote_average}}, testo:{{item.overview}}</p>
+                            <h5 class="card-title">titolo:{{item.title ? item.title : item.name}}</h5> 
+                                <p class="text-white mt-1">id:{{item.id}}, 
+                                <br/> voto:{{item.vote_average}},<br/> testo:{{item.overview}},
+                                 lingua: <img class="bandiera" v-if="item.original_language ==='it'" :src="require('../assets/style/'+item.original_language+'.png')" alt="italiano">
+                                lingua: <img  class="bandiera" v-if="item.original_language ==='en'" :src="require('../assets/style/'+item.original_language+'.png')" alt="inglese">
+                            </p>
                             <!--<p class="card-text">id:{{item.id}}, voto:{{item.vote_average}}, testo:{{item.overview}}</p>-->
     
                         </div>
