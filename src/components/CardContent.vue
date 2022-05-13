@@ -4,7 +4,8 @@
         <div class="row">
             <div v-for="(item) in items" :key="item.id" class="col-6 col-md-4 col-lg-3 mb-2">
                 <div class="card mt-5" style="width: 16rem;">
-                   <a href="#"> <img :src="imagePath+item.poster_path" class="card-img" alt="poster">
+                   
+                       <img :src="imagePath+item.poster_path" class="card-img" alt="poster">
                         <div class="card-img-overlay">
                             <h5 class="card-title">titolo:{{item.title ? item.title : item.name}}</h5> 
                                 <p class="text-white mt-1">id:{{item.id}}, 
@@ -15,7 +16,7 @@
                             <!--<p class="card-text">id:{{item.id}}, voto:{{item.vote_average}}, testo:{{item.overview}}</p>-->
     
                         </div>
-                    </a>   
+                     
                 </div>
             </div>
         </div>
@@ -94,13 +95,12 @@ line-height:17px;
 font-family:'Roboto Condensed';
 
 }
-a{
-    color: white;
-    text-decoration:none;
-    
+.card-img-overlay{
+ opacity:0.0;
+ color:red;
 }
-a:hover{
-opacity:rgb(40, 38, 38);
+.card-img-overlay:hover{
+opacity:10;
 display: block;
 
 }
